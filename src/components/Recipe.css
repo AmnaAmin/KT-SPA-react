@@ -1,0 +1,27 @@
+.popUpBG {
+    position: fixed;
+    background: #00000078;
+    left: 0;
+    right: 0;
+
+    top: 0;
+    bottom: 0;
+    display: flex;
+}
+.popUpBG > div {
+    position: relative;
+    background: white;
+    margin: auto;
+    max-width: 600px;
+}
+.close.icon {
+    position: absolute;
+    right: -15px;
+    top: -8px;
+    background: #c2c1c1;
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    border-radius: 20px;
+    cursor: pointer;
+}
