@@ -15,23 +15,24 @@ class Form extends React.Component {
   render() {
     return (
       <form className='sixteen wide column' onSubmit={this.handleSubmit}>
-        <div className='ui fluid action input'>
+        <div className='ui fluid action input paddingTop'>
           <input
             id='search-input'
             name='searchInput'
             type='text'
-            placeholder='Search...'
+            placeholder='Type here to Search...'
             value={this.state.value}
             onChange={this.searchValEvent}
           />
-           {this.state.value}
+
           <button
             id='submit-button'
             name='submitButton'
-            className='ui button'
+            className='ui button teal'
             type='submit'
+            title="Submit"
           >
-            Submit
+            <i className='search icon'></i>
           </button>
         </div>
       </form>

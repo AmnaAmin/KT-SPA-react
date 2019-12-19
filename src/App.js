@@ -15,19 +15,24 @@ class App extends React.Component {
     super(props)
     this.state = {
       data: [],
+      detailData: {},
       error: '',
       showDetailClass: false,
+      
       loader: false
     }
     this.onShowPopup = this.onShowPopup.bind(this)
   }
   // methods
-  onSubmitForm = (value) => { // Receives prop from AppForm
+  onSubmitForm = value => {
+    // Receives prop from AppForm
     this.setState({ loader: true })
     this.getData(value)
   }
 
-  onShowPopup = (value) => this.setState({ showDetailClass: value })
+  onShowPopup = (value, data) => {
+    this.setState({ showDetailClass: value, detailData: data })
+  }
 
   getData(q) {
     const setAPI = Base_URL + `&q=${q}`
@@ -40,15 +45,34 @@ class App extends React.Component {
     })
   }
 
+  componentDidMount() {
+    this.onSubmitForm('chicken')
+  }
+
   render() {
     return (
       <div>
+        {/* <Loader /> */}
         {this.state.loader ? <Loader /> : ''}
         <div className='App ui grid container'>
           <Form callBack={this.onSubmitForm} />
-          {this.state.data.map(rec => (<Recipe key={Math.random()} callBack={this.onShowPopup} data={rec.recipe} />))}
+          {this.state.data.map(rec => (
+            <Recipe
+              key={Math.random()}
+              callBack={this.onShowPopup}
+              data={rec.recipe}
+            />
+          ))}
         </div>
-        {this.state.showDetailClass ? <RecipeDetail onClosePopup={this.onShowPopup} /> : ''}
+        {this.state.showDetailClass ? (
+          <RecipeDetail
+            key={Math.random()}
+            onClosePopup={this.onShowPopup}
+            data={this.state.detailData}
+          />
+        ) : (
+          ''
+        )}
       </div>
     )
   }

@@ -8,18 +8,22 @@ configure({ adapter: new Adapter() })
 let wrapper;
 let wrapper2;
 let onSubmitTitle = jest.fn()
+let data = {
+  label: 'Chocolate cake',
+  calories: '600',
+  image: '/',
+  ingredients: [],
+  cautions: [],
+  source: '',
+  url: '/'
+}
 
 beforeEach(() => {
-  let data = {
-    label: 'Chocolate cake',
-    calories: '600',
-    image: '/'
-  }
   wrapper = mount(<Recipe data={data} callBack={onSubmitTitle} />)
 }) 
 
 test ('Check the Title click event', () => {
-  const title = wrapper.find('p.header')
+  const title = wrapper.find('div#viewDetail')
   expect(title).toBeTruthy()
   let titleClick = title.simulate('click')
   expect(titleClick).toBeTruthy()
@@ -28,12 +32,11 @@ test ('Check the Title click event', () => {
 })
 
 test ('If Recipe Details are being rendered', () => {
-  wrapper2 = mount(<RecipeDetail onClosePopup={onSubmitTitle}/>)
- expect(wrapper2.exists('div.popUpBG')).toEqual(true)
- expect(wrapper2.exists('i.icon.close')).toEqual(true)
- let popupClose = wrapper2.find('i.icon.close')
+  wrapper2 = mount(<RecipeDetail onClosePopup={onSubmitTitle} data={data} />)
+ expect(wrapper2.exists('div#modal')).toEqual(true)
+ expect(wrapper2.exists('i#closeIcon')).toEqual(true)
+ let popupClose = wrapper2.find('i#closeIcon')
  expect(popupClose).toBeTruthy()
- console.log('popupClose==>', popupClose)
  let popUpCloseClick = popupClose.simulate('click')
  expect(popUpCloseClick).toBeTruthy()
  expect(onSubmitTitle).toHaveBeenCalled()
