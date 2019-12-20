@@ -3,7 +3,6 @@ import Loader from './components/Loader'
 import Form from './components/Form'
 import Recipe from './components/Recipe'
 import RecipeDetail from './components/RecipeDetail'
-import './App.css';
 
 // presets 
 const APP_ID = 'd100a428'

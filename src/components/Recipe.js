@@ -1,6 +1,4 @@
 import React from 'react'
-import './Recipe.css'
-
 class Recipe extends React.Component {
     state = { showDetailClass : true}
 
