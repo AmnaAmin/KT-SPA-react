@@ -1,7 +1,34 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## About Project Detail
+
+
+### `Demo`
+
+Please open the page on web browser, as the page is not responsive it wont look good on mobile browsers. 
+https://heuristic-cori-7797ad.netlify.com/
+
+
+### `API used` 
+
+I am using free search API from https://www.edamam.com/ 
+Edamam provides free API for developers, they generate App_id on request so that APIs can be accessed and have provided documentation on how to use the APIs. 
+Edamam search limits with 5 attempts per minute. 
+
+
+**Note: KT has referd me API from Bandsintown that is: https://app.swaggerhub.com/apis/Bandsintown/PublicAPI/3.0.0. I emailed them for App_id but they didnt provide so I used some other free resource on internet. **
+
+
+### `Tool used`
+
+React Cli for project structure,
+React JS for creating SPA,
+Semantic UI for basic grid, 
+Some custom css for colors,
+Jest for unit Tests.
+
 
 ## Available Scripts
 
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 In the project directory, you can run:
 
 ### `yarn start`
@@ -37,32 +64,3 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
