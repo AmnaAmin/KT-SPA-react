@@ -1,92 +1,86 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: #BBD5D5;
   color: #2b2b2b;
+  background: #fbfbfb;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+p {
+  margin-bottom: 0;
 }
 
-input#search-input {
-  background: #F6F4EF;
-  font-size: 17px;
+.loader_card {
+    background: #58d2d0b3;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
-.paddingTop {
-  padding-top: 20px;
+.card-header {
+    height: 140px;
+    overflow: hidden;
+    padding: 15px;
+    background: #505050a3;
+    border: 0;
+    position: relative;
 }
 
-.ui.card {
-  background: #F6F4EF;
+.card-header img {
+    width: 100%;
+    filter: blur(8px);
+    z-index: 0;
+    position: absolute;
+    left: 0;
 }
 
-.dimmer.loaderBg {
-  background-color: rgb(0, 128, 128, .6)
+.artist_name {
+    z-index: 10;
+    position: relative;
+    color: #fff;
 }
 
-/* Recipe.css */
-
-.ui.modal>.close {
-  top: -1.5rem;
-  right: -1.5rem;
-  background: #c2c1c1;
-  border-radius: 20px;
+.artist_name .a_name {
+    font-size: 1.5em;
+    font-weight: 600;
 }
 
-.ui.card>.extra.viewDetail {
-  cursor: pointer;
-  background: teal;
-  color: #fbfbfb;
-  text-align: center;
-  font-weight: 600;
-  transition: background .5s;
-}
-.extra.content.viewDetail:hover {
-  background: rgba(0, 128, 128, .8);
-}
-.header.teal{
-  background: rgba(0, 128, 128) !important;
-  color: #fbfbfb !important;
-}
-.image.content {
-  background-color: #F6F4EF;
+.artist_name .follow_me a{
+  color: inherit;
 }
 
-.additionalBox{
-  padding: 10px;
-  color: grey;
-  border: 1px solid #ccc;
+.events_c span {
+    font-size: 1.5em;
+    font-weight: 800;
+    color: #ffca1b;
+    text-shadow: 0px 1px black;
 }
 
-.floatRight {
-  float: right;
+.artist_events ul {
+    padding-left: 0;
+    list-style: none;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
-.ui.modal {
-  max-width: 700px;
+.artist_events li {
+    padding:  5px 10px;
+    background: #f8f8f8;
+    margin-bottom: 2px;
 }
 
-.ui.modal>.content>.description {
-  width: 100%;
+.artist_events li .e_name {
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
-.tag {
-  background: #ccc;
-  border-radius: 20px;
-  padding: 4px 10px;
-  display: inline-block;
-  margin: 1px;
-}
-
-.ellipsis {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
+.modal {
+  display: block;
 }

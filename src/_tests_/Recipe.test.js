@@ -1,44 +1,49 @@
 import React from 'react';
 import Adapter from 'enzyme-adapter-react-16'
 import { mount, configure } from 'enzyme'
-import Recipe from '../components/Recipe'
-import RecipeDetail from '../components/RecipeDetail'
+import SingleEvent from '../components/SingleEvent'
 
 configure({ adapter: new Adapter() })
 let wrapper;
-let wrapper2;
-let onSubmitTitle = jest.fn()
+let openPopup = jest.fn()
 let data = {
-  label: 'Chocolate cake',
-  calories: '600',
-  image: '/',
-  ingredients: [],
-  cautions: [],
-  source: '',
-  url: '/'
+  id: '1908',
+  facebook_page_url: 'Chocolate cake',
+  name: '600',
+  image_url: '/'
 }
 
+let eventData = [
+  {
+    id: '',
+    datetime: '2021-03-12T19:00:00',
+    venue: {
+      location: "Live Stream",
+      name: "The One Man Pardy with Ardalan",
+      city: "",
+      country: "",
+      region: "",
+      type: "Virtual",
+      timezone: "America/Los_Angeles"
+    },
+    offers: [
+      {
+      status: "available",
+      url: "https://www.bandsintown.com/l/102496841?app_id=12312&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=watch_live",
+      type: "Watch Live"
+      }
+    ]
+  }
+]
+
 beforeEach(() => {
-  wrapper = mount(<Recipe data={data} callBack={onSubmitTitle} />)
+  wrapper = mount(<SingleEvent event={eventData[0]} />)
 }) 
 
-test ('Check the Title click event', () => {
-  const title = wrapper.find('div#viewDetail')
+test ('Check the Button click event', () => {
+  const title = wrapper.find('button#viewDetail')
   expect(title).toBeTruthy()
-  let titleClick = title.simulate('click')
+  let titleClick = title.simulate('submit')
   expect(titleClick).toBeTruthy()
-  expect(onSubmitTitle).toHaveBeenCalled()
-  expect(onSubmitTitle).toHaveBeenCalledTimes(1)
 })
 
-test ('If Recipe Details are being rendered', () => {
-  wrapper2 = mount(<RecipeDetail onClosePopup={onSubmitTitle} data={data} />)
- expect(wrapper2.exists('div#modal')).toEqual(true)
- expect(wrapper2.exists('i#closeIcon')).toEqual(true)
- let popupClose = wrapper2.find('i#closeIcon')
- expect(popupClose).toBeTruthy()
- let popUpCloseClick = popupClose.simulate('click')
- expect(popUpCloseClick).toBeTruthy()
- expect(onSubmitTitle).toHaveBeenCalled()
- expect(onSubmitTitle).toHaveBeenCalledTimes(2)
-})

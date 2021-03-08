@@ -2,8 +2,10 @@ import React from 'react';
 
 function Loader () {
     return (
-      <div className='ui active dimmer loaderBg'>
-        <div className='ui large text loader'>Loading</div>
+      <div className="loader_card">
+        <div className="spinner-border" role="status">
+          <span className="sr-only">Loading...</span>
+        </div>
       </div>
     )
 }

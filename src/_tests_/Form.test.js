@@ -12,8 +12,8 @@ beforeEach(() => {
 }) 
 
 test('Change Input value of form', () => {
-    formWrapper.setState({ value: 'pineapple' })
-    expect(formWrapper.state('value')).toEqual('pineapple')
+    formWrapper.setState({ value: 'rihana' })
+    expect(formWrapper.state('value')).toEqual('rihana')
 }) 
 
 test('Click submit button after adding value', () => {

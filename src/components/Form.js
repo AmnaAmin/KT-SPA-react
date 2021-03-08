@@ -8,31 +8,31 @@ class Form extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault()
     this.props.callBack(this.state.value)
-    this.setState({ value: '' })
   }
 
   render() {
     return (
-      <form className='sixteen wide column' onSubmit={this.handleSubmit}>
-        <div className='ui fluid action input paddingTop'>
-          <input
+      <form onSubmit={this.handleSubmit}>
+        <div className="input-group mt-5">
+          <input 
             id='search-input'
             name='searchInput'
             type='text'
             placeholder='Type here to Search...'
             value={this.state.value}
             onChange={this.searchValEvent}
+            className="form-control p-4"
           />
-
-          <button
-            id='submit-button'
-            name='submitButton'
-            className='ui button teal'
-            type='submit'
-            title="Submit"
-          >
-            <i className='search icon'></i>
-          </button>
+          <div className="input-group-append">
+            <button 
+              className="btn btn-success" 
+              type="submit" 
+              id='submit-button'
+              name='submitButton'
+              title="Submit">
+                <i className='fa fa-search'></i>
+            </button>
+          </div>
         </div>
       </form>
     )
